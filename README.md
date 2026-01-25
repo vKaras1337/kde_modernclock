@@ -36,7 +36,11 @@
 1. Clone this repository  
 `git clone https://github.com/vKaras1337/kde_modernclock && cd kde_modernclock/`  
 2. Install using the script  
-`kpackagetool5 -i package`
+`kpackagetool6 -i package/ -t Plasma/Applet`
 
 ## Credits
-This project is a fork of the original [Modern Clock](https://github.com/prayag2/kde_modernclock) by [Prayag Jain](https://github.com/prayag2). I would like to thank the original author for creating this beautiful clock widget and making it open source. This fork adds additional features like localization support while maintaining the modern and clean design of the original.
+This project is a fork of the original [Modern Clock](https://github.com/prayag2/kde_modernclock) by [Prayag Jain](https://github.com/prayag2). I would like to thank the original author for creating this beautiful clock widget and making it open source.
+
+The localization feature was inspired by [JortonMV's fork](https://github.com/JortonMV/kde_modernclock/commit/25b87b540ea7903ab4d72174d2f77888d2a7a909). Thanks for the great idea!
+
+This fork combines these improvements while maintaining the modern and clean design of the original.
