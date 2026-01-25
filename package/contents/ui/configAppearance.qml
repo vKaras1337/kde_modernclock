@@ -9,7 +9,9 @@ Kirigami.ScrollablePage {
     
     // properties
     property alias cfg_show_day: showDay.checked
+    property alias cfg_use_local_day_name: useLocalDayName.checked
     property alias cfg_show_date: showDate.checked
+    property alias cfg_use_local_date_name: useLocalDateName.checked
     property alias cfg_show_time: showTime.checked
     property alias cfg_day_font_size: dayFontSize.value
     property alias cfg_date_font_size: dateFontSize.value
@@ -36,6 +38,14 @@ Kirigami.ScrollablePage {
                 id: showDay
             }
         }
+        RowLayout {
+            Label {
+                text: i18n("Use local name")
+            }
+            CheckBox {
+                id: useLocalDayName
+            }
+        }
         NumberField {
             id: dayFontSize
             label: i18n("Font Size")
@@ -57,6 +67,14 @@ Kirigami.ScrollablePage {
             }
             CheckBox {
                 id: showDate
+            }
+        }
+        RowLayout {
+            Label {
+                text: i18n("Use local name")
+            }
+            CheckBox {
+                id: useLocalDateName
             }
         }
         NumberField {

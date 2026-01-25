@@ -45,16 +45,33 @@ PlasmoidItem {
             property bool use24HourFormat: plasmoid.configuration.use_24_hour_format
             property string timeCharacter: plasmoid.configuration.time_character
             property string dateFormat: plasmoid.configuration.date_format
+            property bool useLocalDayName: plasmoid.configuration.use_local_day_name
+            property bool useLocalDateName: plasmoid.configuration.use_local_date_name
             
             onUse24HourFormatChanged: dataChanged()
             onTimeCharacterChanged: dataChanged()
             onDateFormatChanged: dataChanged()
+            onUseLocalDayNameChanged: dataChanged()
+            onUseLocalDateNameChanged: dataChanged()
 
             onDataChanged: {
                 var time_format = use24HourFormat ? "hh:mm" : "hh:mm AP"
                 var curDate = dataSource.data["Local"]["DateTime"]
-                display_day.text = Qt.formatDate(curDate, "dddd").toUpperCase()
-                display_date.text = Qt.formatDate(curDate, dateFormat).toUpperCase()
+                
+                // Day name - localized or english
+                if (useLocalDayName) {
+                    display_day.text = curDate.toLocaleString(Qt.locale(), "dddd").toUpperCase()
+                } else {
+                    display_day.text = Qt.formatDate(curDate, "dddd").toUpperCase()
+                }
+                
+                // Date - localized or english
+                if (useLocalDateName) {
+                    display_date.text = curDate.toLocaleString(Qt.locale(), dateFormat).toUpperCase()
+                } else {
+                    display_date.text = Qt.formatDate(curDate, dateFormat).toUpperCase()
+                }
+                
                 display_time.text = timeCharacter + " " + Qt.formatTime(curDate, time_format) + " " + timeCharacter
             }
 

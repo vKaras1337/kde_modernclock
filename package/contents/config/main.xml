@@ -15,6 +15,9 @@
         <entry name="show_day" type="Bool">
             <default>true</default>
         </entry>
+        <entry name="use_local_day_name" type="Bool">
+            <default>true</default>
+        </entry>
         <entry name="date_font_size" type="Int">
             <default>19</default>
         </entry>
@@ -25,6 +28,9 @@
             <default>dd MMM yyyy</default>
         </entry>
         <entry name="show_date" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="use_local_date_name" type="Bool">
             <default>true</default>
         </entry>
         <entry name="time_font_size" type="Int">
