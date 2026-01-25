@@ -1,18 +1,27 @@
-<p align="center">
-  <img src="https://github.com/Prayag2/kde_modernclock/blob/main/assets/logo.jpg" width=100/>
-  <h2 align="center">Modern Clock for KDE</h2>
-  <p align="center">A modern looking clock widget!</center>
-</p>
+<div align="center">
+  <img src="https://github.com/vKaras1337/kde_modernclock/blob/main/assets/logo.jpg" width=100/>
+  <h2>Modern Clock for KDE</h2>
+  <p>A modern looking clock widget!</p>
+</div>
 
-<p align="center">
-<a href="https://github.com/prayag2/kde_modernclock/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_modernclock/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_modernclock/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-</p>
+<div align="center">
+<a href="https://github.com/vKaras1337/kde_modernclock/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/vKaras1337/kde_modernclock/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/vKaras1337/kde_modernclock/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+</div>
 
-<p align="center">
-  <img src="https://github.com/Prayag2/kde_modernclock/blob/main/assets/ss.png"/>
-</p>
+<div align="center">
+  <img src="https://github.com/vKaras1337/kde_modernclock/blob/main/assets/ss.png"/>
+</div>
+
+## Features
+- **Localization Support**: Display day and date names in your local language or keep them in English
+  - Toggle "Use local name" for day names (e.g., "SAMSTAG" instead of "SATURDAY")
+  - Toggle "Use local name" for date formats with localized month names
+- **Customizable Appearance**: Adjust font sizes, letter spacing, and colors for each element
+- **Flexible Time Format**: Choose between 12-hour and 24-hour time display
+- **Show/Hide Elements**: Independently control visibility of day, date, and time
+- **Custom Style Characters**: Add decorative characters around the time display
 
 ## Installation
 #### KDE Store (Preferred way)
@@ -25,6 +34,9 @@
 
 #### From this repository
 1. Clone this repository  
-`git clone https://github.com/prayag2/kde_modernclock && cd kde_modernclock/`  
+`git clone https://github.com/vKaras1337/kde_modernclock && cd kde_modernclock/`  
 2. Install using the script  
 `kpackagetool5 -i package`
+
+## Credits
+This project is a fork of the original [Modern Clock](https://github.com/prayag2/kde_modernclock) by [Prayag Jain](https://github.com/prayag2). I would like to thank the original author for creating this beautiful clock widget and making it open source. This fork adds additional features like localization support while maintaining the modern and clean design of the original.
