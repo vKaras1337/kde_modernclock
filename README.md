@@ -3,17 +3,17 @@
 ## Advanced Modern Clock for KDE
 A modern looking clock widget!
 
-[![GitHub stars](https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/stargazers) [![GitHub forks](https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/network) [![GitHub issues](https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/issues)
+[![GitHub stars](https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/network)&nbsp;[![GitHub issues](https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/issues)
 
-![Screenshot en](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/screenshot_en.png)  
-![Screenshot de](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/screenshot_de.png)
+![Screenshot en](assets/screenshot_en.png)  
+![Screenshot de](assets/screenshot_de.png)
 
 ## Features
 - **Localization Support**: Display day and date names in your local language or keep them in English
   - Toggle "Use local name" for day names (e.g., "SAMSTAG" instead of "SATURDAY")
   - Toggle "Use local name" for date formats with localized month names
 - **Customizable Appearance**: Adjust font sizes, letter spacing, and colors for each element
-- **Flexible Time Format**: Choose between 12-hour and 24-hour time display
+- **Flexible Time Format**:
   - Custom time format field supports Qt patterns (e.g., hh:mm:ss, h:mm:ss AP, HH:mm:ss)
   - Seconds in the format enable 1-second refresh; otherwise refreshes each minute
   - Custom format overrides the 12/24-hour toggle when filled
@@ -21,21 +21,23 @@ A modern looking clock widget!
 - **Custom Style Characters**: Add decorative characters around the time display
 
 ## Installation
-#### KDE Store (Preferred way)
+### KDE Store (Preferred way)
 1. Right click on the desktop
-2. Click on "Add Widgets"
-3. Click on "Get New Widgets"
-4. Click on "Download New Plasma Widgets"
+2. Click on "Enter Edit Mode "
+3. Click on "Add Widgets"
+4. Click on "Get New Widgets"
 5. Search for "Advanced Modern Clock"
 6. Click on "Install" and you're done!
 
-#### From this repository
+### From this repository
+
 1. Clone this repository  
 `git clone https://github.com/vKaras1337/kde_modernclock && cd kde_modernclock/`  
 2. Install using the script  
 `kpackagetool6 -i package/ -t Plasma/Applet`
 
 ## Credits
+
 This project is a fork of the original [Modern Clock](https://github.com/prayag2/kde_modernclock) by [Prayag Jain](https://github.com/prayag2). I would like to thank the original author for creating this beautiful clock widget and making it open source.
 
 The localization feature was inspired by [JortonMV's fork](https://github.com/JortonMV/kde_modernclock/commit/25b87b540ea7903ab4d72174d2f77888d2a7a909). Thanks for the great idea!
@@ -47,4 +49,5 @@ The custom time format feature was inspired by [YoannDev90's commit](https://git
 This fork combines these improvements while maintaining the modern and clean design of the original.
 
 ## Disclaimer
-- I'm not a QML expert; the features were assembled with help from Google and AI.
+
+I'm not a QML expert; the features were assembled with help from Google and AI to the best of my knowledge.
