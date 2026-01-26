@@ -25,6 +25,22 @@ Kirigami.ScrollablePage {
     property alias cfg_time_character: timeCharacter.text
     property alias cfg_date_format: dateFormat.text
     property alias cfg_date_font_color: dateFontColor.color
+    
+    // Font properties
+    property string cfg_fontFamilyDay
+    property string cfg_fontFamilyDate
+    property string cfg_fontFamilyTime
+    
+    // Font list (loaded on demand)
+    property var fontFamilies: []
+    property bool fontsLoaded: false
+    
+    function loadFonts() {
+        if (!fontsLoaded) {
+            fontFamilies = Qt.fontFamilies()
+            fontsLoaded = true
+        }
+    }
 
     Kirigami.FormLayout {
         Title {
@@ -44,6 +60,44 @@ Kirigami.ScrollablePage {
             }
             CheckBox {
                 id: useLocalDayName
+            }
+        }
+        RowLayout {
+            Label {
+                text: i18n("Font Family")
+            }
+            ComboBox {
+                id: dayFontComboBox
+                editable: true
+                model: fontFamilies
+                onActivated: function(index) {
+                    if (index >= 0 && fontsLoaded) {
+                        cfg_fontFamilyDay = fontFamilies[index]
+                    }
+                }
+                onAccepted: {
+                    cfg_fontFamilyDay = editText
+                }
+                Component.onCompleted: {
+                    editText = cfg_fontFamilyDay || "Anurati"
+                    popup.aboutToShow.connect(function() {
+                        loadFonts()
+                        if (fontsLoaded && cfg_fontFamilyDay) {
+                            currentIndex = fontFamilies.indexOf(cfg_fontFamilyDay)
+                        }
+                    })
+                }
+            }
+        }
+        RowLayout {
+            Label {
+                text: ""
+            }
+            Label {
+                text: i18n("Default: Anurati")
+                font.pointSize: -1
+                font.pixelSize: 10
+                opacity: 0.8
             }
         }
         NumberField {
@@ -77,6 +131,44 @@ Kirigami.ScrollablePage {
                 id: useLocalDateName
             }
         }
+        RowLayout {
+            Label {
+                text: i18n("Font Family")
+            }
+            ComboBox {
+                id: dateFontComboBox
+                editable: true
+                model: fontFamilies
+                onActivated: function(index) {
+                    if (index >= 0 && fontsLoaded) {
+                        cfg_fontFamilyDate = fontFamilies[index]
+                    }
+                }
+                onAccepted: {
+                    cfg_fontFamilyDate = editText
+                }
+                Component.onCompleted: {
+                    editText = cfg_fontFamilyDate || "Poppins"
+                    popup.aboutToShow.connect(function() {
+                        loadFonts()
+                        if (fontsLoaded && cfg_fontFamilyDate) {
+                            currentIndex = fontFamilies.indexOf(cfg_fontFamilyDate)
+                        }
+                    })
+                }
+            }
+        }
+        RowLayout {
+            Label {
+                text: ""
+            }
+            Label {
+                text: i18n("Default: Poppins")
+                font.pointSize: -1
+                font.pixelSize: 10
+                opacity: 0.8
+            }
+        }
         NumberField {
             id: dateFontSize
             label: i18n("Font Size")
@@ -107,6 +199,44 @@ Kirigami.ScrollablePage {
             }
             CheckBox {
                 id: showTime
+            }
+        }
+        RowLayout {
+            Label {
+                text: i18n("Font Family")
+            }
+            ComboBox {
+                id: timeFontComboBox
+                editable: true
+                model: fontFamilies
+                onActivated: function(index) {
+                    if (index >= 0 && fontsLoaded) {
+                        cfg_fontFamilyTime = fontFamilies[index]
+                    }
+                }
+                onAccepted: {
+                    cfg_fontFamilyTime = editText
+                }
+                Component.onCompleted: {
+                    editText = cfg_fontFamilyTime || "Poppins"
+                    popup.aboutToShow.connect(function() {
+                        loadFonts()
+                        if (fontsLoaded && cfg_fontFamilyTime) {
+                            currentIndex = fontFamilies.indexOf(cfg_fontFamilyTime)
+                        }
+                    })
+                }
+            }
+        }
+        RowLayout {
+            Label {
+                text: ""
+            }
+            Label {
+                text: i18n("Default: Poppins")
+                font.pointSize: -1
+                font.pixelSize: 10
+                opacity: 0.8
             }
         }
         NumberField {

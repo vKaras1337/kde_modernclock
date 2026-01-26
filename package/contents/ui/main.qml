@@ -96,7 +96,7 @@ PlasmoidItem {
                 // font settings
                 font.pixelSize: plasmoid.configuration.day_font_size
                 font.letterSpacing: plasmoid.configuration.day_letter_spacing
-                font.family: font_anurati.name
+                font.family: plasmoid.configuration.fontFamilyDay || font_anurati.name
                 color: plasmoid.configuration.day_font_color
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter 
@@ -112,7 +112,7 @@ PlasmoidItem {
                 // font settings
                 font.pixelSize: plasmoid.configuration.date_font_size
                 font.letterSpacing: plasmoid.configuration.date_letter_spacing
-                font.family: font_poppins.name
+                font.family: plasmoid.configuration.fontFamilyDate || font_poppins.name
                 color: plasmoid.configuration.date_font_color
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -127,7 +127,7 @@ PlasmoidItem {
 
                 // font settings
                 font.pixelSize: plasmoid.configuration.time_font_size
-                font.family: font_poppins.name
+                font.family: plasmoid.configuration.fontFamilyTime || font_poppins.name
                 color: plasmoid.configuration.time_font_color
                 font.letterSpacing: plasmoid.configuration.time_letter_spacing
                 horizontalAlignment: Text.AlignHCenter

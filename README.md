@@ -43,4 +43,6 @@ This project is a fork of the original [Modern Clock](https://github.com/prayag2
 
 The localization feature was inspired by [JortonMV's fork](https://github.com/JortonMV/kde_modernclock/commit/25b87b540ea7903ab4d72174d2f77888d2a7a909). Thanks for the great idea!
 
+The custom font selection feature was inspired by [lunar-d's fork](https://github.com/lunar-d/kde_modernclock_fonts/commit/9a881d1e560a2c30c3defde109aaae81fc27baef). Thanks for the implementation!
+
 This fork combines these improvements while maintaining the modern and clean design of the original.
