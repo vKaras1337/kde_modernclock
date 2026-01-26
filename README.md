@@ -1,18 +1,11 @@
-<div align="center">
-  <img src="https://github.com/vKaras1337/kde_modernclock/blob/main/assets/logo.jpg" width=100/>
-  <h2>Modern Clock for KDE</h2>
-  <p>A modern looking clock widget!</p>
-</div>
+![Logo](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/logo.jpg)
 
-<div align="center">
-<a href="https://github.com/vKaras1337/kde_modernclock/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/vKaras1337/kde_modernclock/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/vKaras1337/kde_modernclock/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-</div>
+## Advanced Modern Clock for KDE
+A modern looking clock widget!
 
-<div align="center">
-  <img src="https://github.com/vKaras1337/kde_modernclock/blob/main/assets/ss.png"/>
-</div>
+[![GitHub stars](https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/stargazers) [![GitHub forks](https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/network) [![GitHub issues](https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/issues)
+
+![Screenshot](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/ss.png)
 
 ## Features
 - **Localization Support**: Display day and date names in your local language or keep them in English
@@ -20,6 +13,9 @@
   - Toggle "Use local name" for date formats with localized month names
 - **Customizable Appearance**: Adjust font sizes, letter spacing, and colors for each element
 - **Flexible Time Format**: Choose between 12-hour and 24-hour time display
+  - Custom time format field supports Qt patterns (e.g., hh:mm:ss, h:mm:ss AP, HH:mm:ss)
+  - Seconds in the format enable 1-second refresh; otherwise refreshes each minute
+  - Custom format overrides the 12/24-hour toggle when filled
 - **Show/Hide Elements**: Independently control visibility of day, date, and time
 - **Custom Style Characters**: Add decorative characters around the time display
 
@@ -29,7 +25,7 @@
 2. Click on "Add Widgets"
 3. Click on "Get New Widgets"
 4. Click on "Download New Plasma Widgets"
-5. Search for "Modern Clock"
+5. Search for "Advanced Modern Clock"
 6. Click on "Install" and you're done!
 
 #### From this repository
@@ -48,3 +44,6 @@ The custom font selection feature was inspired by [lunar-d's fork](https://githu
 The custom time format feature was inspired by [YoannDev90's commit](https://github.com/YoannDev90/kde_modernclock/commit/3a737660982985f1aaf1ede2b374c1d2e4f1b8da), which adds seconds-aware refresh cadence.
 
 This fork combines these improvements while maintaining the modern and clean design of the original.
+
+## Disclaimer
+- I'm not a QML expert; the features were assembled with help from Google and AI.
