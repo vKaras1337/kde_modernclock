@@ -45,4 +45,6 @@ The localization feature was inspired by [JortonMV's fork](https://github.com/Jo
 
 The custom font selection feature was inspired by [lunar-d's fork](https://github.com/lunar-d/kde_modernclock_fonts/commit/9a881d1e560a2c30c3defde109aaae81fc27baef). Thanks for the implementation!
 
+The custom time format feature was inspired by [YoannDev90's commit](https://github.com/YoannDev90/kde_modernclock/commit/3a737660982985f1aaf1ede2b374c1d2e4f1b8da), which adds seconds-aware refresh cadence.
+
 This fork combines these improvements while maintaining the modern and clean design of the original.

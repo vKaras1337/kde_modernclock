@@ -34,7 +34,7 @@ PlasmoidItem {
         Layout.preferredWidth: Layout.minimumWidth
         Layout.preferredHeight: Layout.minimumHeight
 
-        // Updating time every minute
+        // Updating time every minute (or second if format includes seconds)
         Plasma5Support.DataSource {
             id: dataSource
             engine: "time"
@@ -45,18 +45,51 @@ PlasmoidItem {
             property bool use24HourFormat: plasmoid.configuration.use_24_hour_format
             property string timeCharacter: plasmoid.configuration.time_character
             property string dateFormat: plasmoid.configuration.date_format
+            property string timeFormat: plasmoid.configuration.time_format
             property bool useLocalDayName: plasmoid.configuration.use_local_day_name
             property bool useLocalDateName: plasmoid.configuration.use_local_date_name
+            property bool usesSeconds: false
             
-            onUse24HourFormatChanged: dataChanged()
-            onTimeCharacterChanged: dataChanged()
-            onDateFormatChanged: dataChanged()
-            onUseLocalDayNameChanged: dataChanged()
-            onUseLocalDateNameChanged: dataChanged()
+            readonly property string default24HourFormat: "hh:mm"
+            readonly property string default12HourFormat: "hh:mm AP"
+            readonly property int secondInterval: 1000
+            readonly property int minuteInterval: 60000
+            
+            function currentTimeFormat() {
+                var customFormat = timeFormat ? timeFormat.trim() : ""
+                return (customFormat && customFormat.length > 0) ? customFormat : (use24HourFormat ? default24HourFormat : default12HourFormat)
+            }
+            
+            function updateIntervalForFormat(format) {
+                // Qt time format uses 's' or 'ss' for seconds; adjust refresh cadence when seconds are present.
+                var needsSeconds = /s{1,2}/.test(format)
+                if (needsSeconds !== usesSeconds) {
+                    usesSeconds = needsSeconds
+                    interval = needsSeconds ? secondInterval : minuteInterval
+                    intervalAlignment = needsSeconds ? Plasma5Support.Types.NoAlignment : Plasma5Support.Types.AlignToMinute
+                }
+            }
+            
+            function formatTimeSafely(date) {
+                var format = currentTimeFormat()
+                updateIntervalForFormat(format)
+                var formatted = ""
+                try {
+                    formatted = Qt.formatTime(date, format)
+                } catch (e) {
+                    formatted = ""
+                }
+                if (formatted === "") {
+                    format = use24HourFormat ? default24HourFormat : default12HourFormat
+                    updateIntervalForFormat(format)
+                    formatted = Qt.formatTime(date, format)
+                }
+                return formatted
+            }
 
             onDataChanged: {
-                var time_format = use24HourFormat ? "hh:mm" : "hh:mm AP"
                 var curDate = dataSource.data["Local"]["DateTime"]
+                var formattedTime = formatTimeSafely(curDate)
                 
                 // Day name - localized or english
                 if (useLocalDayName) {
@@ -72,8 +105,23 @@ PlasmoidItem {
                     display_date.text = Qt.formatDate(curDate, dateFormat).toUpperCase()
                 }
                 
-                display_time.text = timeCharacter + " " + Qt.formatTime(curDate, time_format) + " " + timeCharacter
+                display_time.text = timeCharacter + " " + formattedTime + " " + timeCharacter
             }
+            
+            onUse24HourFormatChanged: {
+                updateIntervalForFormat(currentTimeFormat())
+                dataChanged()
+            }
+            onTimeCharacterChanged: dataChanged()
+            onDateFormatChanged: dataChanged()
+            onUseLocalDayNameChanged: dataChanged()
+            onUseLocalDateNameChanged: dataChanged()
+            onTimeFormatChanged: {
+                updateIntervalForFormat(currentTimeFormat())
+                dataChanged()
+            }
+            
+            Component.onCompleted: updateIntervalForFormat(currentTimeFormat())
 
             
         }

@@ -22,6 +22,7 @@ Kirigami.ScrollablePage {
     property alias cfg_time_letter_spacing: timeLetterSpacing.value
     property alias cfg_time_font_color: timeFontColor.color
     property alias cfg_use_24_hour_format: use24HourFormat.checked
+    property alias cfg_time_format: timeFormatField.text
     property alias cfg_time_character: timeCharacter.text
     property alias cfg_date_format: dateFormat.text
     property alias cfg_date_font_color: dateFontColor.color
@@ -253,6 +254,21 @@ Kirigami.ScrollablePage {
             }
             CheckBox {
                 id: use24HourFormat
+                hoverEnabled: true
+                ToolTip.visible: hovered
+                ToolTip.text: i18n("If enabled, the time will be shown in 24-hour format regardless of system settings. This is only applied when the Time format field is empty; a custom time format always takes priority.")
+            }
+        }
+        RowLayout {
+            Label {
+                text: i18n("Time format")
+            }
+            TextField {
+                id: timeFormatField
+                placeholderText: "hh:mm:ss | h:mm:ss AP | HH:mm:ss"
+                hoverEnabled: true
+                ToolTip.visible: hovered
+                ToolTip.text: i18n("Use Qt time formats like 'hh:mm:ss', 'h:mm:ss AP', or 'HH:mm:ss'. h/H = 12h/24h (double letters zero-pad), m = minutes, s = seconds. Using seconds refreshes every second. Leave empty to keep the default 12/24h setting.")
             }
         }
         RowLayout {
