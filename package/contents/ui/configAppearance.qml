@@ -249,26 +249,28 @@ Kirigami.ScrollablePage {
             label: i18n("Letter Spacing")
         }
         RowLayout {
-            Label {
-                text: i18n("Use 24 hour format")
-            }
-            CheckBox {
-                id: use24HourFormat
-                hoverEnabled: true
-                ToolTip.visible: hovered
-                ToolTip.text: i18n("If enabled, the time will be shown in 24-hour format regardless of system settings. This is only applied when the Time format field is empty; a custom time format always takes priority.")
-            }
-        }
-        RowLayout {
+            id: timeFormatRow
+            HoverHandler { id: timeFormatHover }
+            ToolTip.visible: timeFormatHover.hovered
+            ToolTip.text: i18n("Use Qt time formats like 'hh:mm:ss', 'h:mm:ss AP', or 'HH:mm:ss'. h/H = 12h/24h (double letters zero-pad), m = minutes, s = seconds. Using seconds refreshes every second. Leave empty to keep the default 12/24h setting.")
             Label {
                 text: i18n("Time format")
             }
             TextField {
                 id: timeFormatField
                 placeholderText: "hh:mm:ss | h:mm:ss AP | HH:mm:ss"
-                hoverEnabled: true
-                ToolTip.visible: hovered
-                ToolTip.text: i18n("Use Qt time formats like 'hh:mm:ss', 'h:mm:ss AP', or 'HH:mm:ss'. h/H = 12h/24h (double letters zero-pad), m = minutes, s = seconds. Using seconds refreshes every second. Leave empty to keep the default 12/24h setting.")
+            }
+        }
+        RowLayout {
+            id: use24Row
+            HoverHandler { id: use24Hover }
+            ToolTip.visible: use24Hover.hovered
+            ToolTip.text: i18n("If enabled, the time will be shown in 24-hour format regardless of system settings. This is only applied when the Time format field is empty; a custom time format always takes priority.")
+            Label {
+                text: i18n("Use 24 hour format")
+            }
+            CheckBox {
+                id: use24HourFormat
             }
         }
         RowLayout {
