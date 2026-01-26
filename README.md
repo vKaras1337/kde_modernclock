@@ -5,7 +5,8 @@ A modern looking clock widget!
 
 [![GitHub stars](https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/stargazers) [![GitHub forks](https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/network) [![GitHub issues](https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/issues)
 
-![Screenshot](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/ss.png)
+![Screenshot en](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/screenshot_en.png)  
+![Screenshot de](https://github.com/vKaras1337/kde_modernclock/blob/main/assets/screenshot_de.png)
 
 ## Features
 - **Localization Support**: Display day and date names in your local language or keep them in English
