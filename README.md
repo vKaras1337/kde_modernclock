@@ -3,8 +3,6 @@
 ## Advanced Modern Clock for KDE
 A modern looking clock widget!
 
-[![GitHub stars](https://img.shields.io/github/stars/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/network)&nbsp;[![GitHub issues](https://img.shields.io/github/issues/vKaras1337/kde_modernclock?color=%233DAEE9&style=for-the-badge)](https://github.com/vKaras1337/kde_modernclock/issues)
-
 ![Screenshot en](assets/screenshot_en.png)  
 ![Screenshot de](assets/screenshot_de.png)
 
