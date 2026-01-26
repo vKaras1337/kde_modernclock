@@ -25,7 +25,7 @@
             <default>3</default>
         </entry>
         <entry name="date_format" type="String">
-            <default>dd MMM yyyy</default>
+            <default>dd MMMM yyyy</default>
         </entry>
         <entry name="show_date" type="Bool">
             <default>true</default>
