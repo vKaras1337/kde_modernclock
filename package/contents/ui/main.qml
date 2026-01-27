@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasma5support as Plasma5Support
 
 PlasmoidItem {
     id: root
@@ -34,11 +35,11 @@ PlasmoidItem {
         Layout.preferredHeight: Layout.minimumHeight
 
         // Updating time every minute (or second if format includes seconds)
-        PlasmaCore.DataSource {
+        Plasma5Support.DataSource {
             id: dataSource
             engine: "time"
             connectedSources: ["Local"]
-            intervalAlignment: PlasmaCore.Types.AlignToMinute
+            intervalAlignment: Plasma5Support.Types.AlignToMinute
             interval: 60000
 
             property bool use24HourFormat: plasmoid.configuration.use_24_hour_format
@@ -65,7 +66,7 @@ PlasmoidItem {
                 if (needsSeconds !== usesSeconds) {
                     usesSeconds = needsSeconds
                     interval = needsSeconds ? secondInterval : minuteInterval
-                    intervalAlignment = needsSeconds ? PlasmaCore.Types.NoAlignment : PlasmaCore.Types.AlignToMinute
+                    intervalAlignment = needsSeconds ? Plasma5Support.Types.NoAlignment : Plasma5Support.Types.AlignToMinute
                 }
             }
             
