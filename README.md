@@ -44,6 +44,8 @@ The custom font selection feature was inspired by [lunar-d's fork](https://githu
 
 The custom time format feature was inspired by [YoannDev90's commit](https://github.com/YoannDev90/kde_modernclock/commit/3a737660982985f1aaf1ede2b374c1d2e4f1b8da), which adds seconds-aware refresh cadence.
 
+Thanks to [https://github.com/UnknownWitcher] for providing a fix for the centered layout.
+
 This fork combines these improvements while maintaining the modern and clean design of the original.
 
 ## Disclaimer
