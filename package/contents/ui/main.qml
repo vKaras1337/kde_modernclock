@@ -134,6 +134,12 @@ PlasmoidItem {
             anchors.centerIn: parent
             spacing: 5
 
+            width: Math.max(
+                display_day.implicitWidth,
+                display_date.implicitWidth,
+                display_time.implicitWidth
+            )
+
             // The day ("Tuesday", "Wednesday" etc..)
             PlasmaComponents.Label {
                 id: display_day
@@ -146,7 +152,8 @@ PlasmoidItem {
                 font.letterSpacing: plasmoid.configuration.day_letter_spacing
                 font.family: plasmoid.configuration.fontFamilyDay || font_anurati.name
                 color: plasmoid.configuration.day_font_color
-                anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
                 horizontalAlignment: Text.AlignHCenter 
             }
 
@@ -162,8 +169,9 @@ PlasmoidItem {
                 font.letterSpacing: plasmoid.configuration.date_letter_spacing
                 font.family: plasmoid.configuration.fontFamilyDate || font_poppins.name
                 color: plasmoid.configuration.date_font_color
-                horizontalAlignment: Text.AlignHCenter
-                anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter 
             }
 
             // The Time
@@ -178,8 +186,9 @@ PlasmoidItem {
                 font.family: plasmoid.configuration.fontFamilyTime || font_poppins.name
                 color: plasmoid.configuration.time_font_color
                 font.letterSpacing: plasmoid.configuration.time_letter_spacing
-                horizontalAlignment: Text.AlignHCenter
-                anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter 
             }
         }
     }
